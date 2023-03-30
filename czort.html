@@ -45,19 +45,19 @@ if(document.getElementById('idik').style.visibility=='hidden'){this.style.backgr
 <div id="chckbox" class="checkbox-one"></div>
 
 <label class="opis">Edytor</label>
-<select class="select-two" onChange="if(this.selectedIndex==1){ustaw_kolory('jasny');}else{ustaw_kolory('ciemny');};">
+<select class="select-editor" onChange="if(this.selectedIndex==1){ustaw_kolory('jasny');}else{ustaw_kolory('ciemny');};">
     <option>czarny
     <option>biały
 </select>
 <label class="opis" style="left:16%;">Czcionka</label>
-<select class="select-one" id="czcionka_id" onChange="ustaw_czcionke()">
+<select class="select-font-size" id="layout_font" onChange="ustaw_czcionke()">
     <option>14px
     <option>18px
     <option>22px
     <option>26px
 </select>
 <label class="opis" style="left:27.5%;">Formularz</label>
-<select class="select-three" id="motyw_id">
+<select class="select-theme" id="layout_theme">
     <option value="background-color:black;color:white;">czarny
     <option value="background-color:white;color:black;">biały
 </select>

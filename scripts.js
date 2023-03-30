@@ -30,7 +30,7 @@ wypelnij = function () {
         kolortxt = "black";
     }
     
-    kolor = document.getElementById("motyw_id").options[document.getElementById("motyw_id").selectedIndex].value;
+    kolor = document.getElementById('layout_theme').options[document.getElementById('layout_theme').selectedIndex].value;
     
     if (document.getElementById("chckbox").checked == "0") {
         tmp_content = text[0].contentWindow.document.body.innerText.replace(/&gt;/g, ">").replace(/</g, "<");
@@ -92,7 +92,7 @@ ustaw_kolory = function (wybrany) {
 }
 
 ustaw_czcionke = function () {
-    font_object = document.getElementById("czcionka_id");
+    font_object = document.getElementById('layout_font');
     text[0].contentWindow.document.documentElement.style.fontSize = font_object.options[font_object.selectedIndex].text;
     text[0].contentWindow.document.body.style.fontSize = font_object.options[font_object.selectedIndex].text;
     text[1].contentWindow.document.documentElement.style.fontSize = font_object.options[font_object.selectedIndex].text;
@@ -103,7 +103,6 @@ ustaw_czcionke = function () {
     text[3].contentWindow.document.body.style.fontSize = font_object.options[font_object.selectedIndex].text;
     text[4].contentWindow.document.documentElement.style.fontSize = font_object.options[font_object.selectedIndex].text;
     text[4].contentWindow.document.body.style.fontSize = font_object.options[font_object.selectedIndex].text;
-    
 };
 
 wykonaj = function () {

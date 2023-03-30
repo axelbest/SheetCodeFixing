@@ -102,19 +102,21 @@ select {
   height: 3.9%;
 }
 
-.select-one {
+/*SELECTS*/
+.select-editor, .select-theme, .select-font-size {
+  cursor: pointer;
+}
+
+.select-font-size {
   left: 21.5%;
-  cursor: pointer;
 }
 
-.select-two {
+.select-editor {
   left: 10%;
-  cursor: pointer;
 }
 
-.select-three {
+.select-theme {
   left: 33.5%;
-  cursor: pointer;
 }
 
 .checkbox-one {
