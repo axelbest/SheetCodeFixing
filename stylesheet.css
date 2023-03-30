@@ -1,10 +1,10 @@
 html {
-  background-color: rgb(0, 0, 22);
+  background-color: #000016;
   color: white;
 }
 
 .roboczy {
-  background-color: rgb(0, 0, 33);
+  background-color: #000021;
   color: white;
   position: absolute;
   left: 5%;
@@ -16,7 +16,7 @@ html {
 }
 
 .code_button {
-  background-color: rgb(0, 0, 62);
+  background-color: #00003e;
   color: white;
   margin: 0;
   cursor: pointer;
@@ -39,14 +39,14 @@ html {
   left: 0.3%;
   width: 99%;
   height: 92%;
-  background-color: rgb(0, 0, 0);
+  background-color: #000000;
   color: white;
   border: 2px solid white;
   visibility: hidden;
 }
 
 .wynikowy {
-  background-color: rgb(155, 155, 155);
+  background-color: #9b9b9b;
   color: white;
   position: absolute;
   left: 15%;
@@ -58,7 +58,7 @@ html {
 }
 
 select {
-  background-color: rgb(0, 0, 33);
+  background-color: #000021;
   color: white;
   position: absolute;
   left: 6%;
@@ -70,7 +70,7 @@ select {
 }
 
 .opis {
-  background-color: rgb(0, 0, 33);
+  background-color: #000021;
   color: white;
   position: absolute;
   left: 6%;
@@ -149,7 +149,7 @@ select {
   width: 4.5%;
   height: 5.5%;
   border-radius: 8px 8px;
-  background-color: rgb(0, 0, 22);
+  background-color: #000016;
   color: white;
   cursor: pointer;
 }

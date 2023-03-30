@@ -14,7 +14,7 @@ przygotuj = function () {
         document.getElementById("frejmik").style.backgroundColor = kolorbg;
         document.getElementById("frejmik").style.color = kolortxt;
     } else {
-        document.getElementById("idik").setAttribute("style", "background-color:RGB(155,155,155);color:white;display:relative;position:absolute;left:15%;top:15%;width:70%;height:70%;border-radius:0px 0px;border:2px solid black;z-index:9800;");
+        document.getElementById("idik").setAttribute("style", "background-color:#9b9b9b;color:white;display:relative;position:absolute;left:15%;top:15%;width:70%;height:70%;border-radius:0px 0px;border:2px solid black;z-index:9800;");
         document.getElementById("frejmik").style.border = "2px solid gren";
         document.getElementById("frejmik").style.zIndex = "9900";
         document.getElementById("frejmik").style.backgroundColor = kolorbg;
@@ -37,7 +37,7 @@ wypelnij = function () {
         
         tmp = "<html lang='PL'><head><meta charset='UTF8'><style>html{" + kolor + "font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;" + kolor + "font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}" + text[1].contentWindow.document.body.innerText + "</style></head><body>" + tmp_content + "</body></html>";
         
-        document.getElementById("idik").setAttribute("style", "background-color:RGB(155,155,155);color:white;display:relative;position:absolute;left:15%;top:15%;width:70%;height:70%;border-radius:0px 0px;border:2px solid black;z-index:9800;");
+        document.getElementById("idik").setAttribute("style", "background-color:#9b9b9b;color:white;display:relative;position:absolute;left:15%;top:15%;width:70%;height:70%;border-radius:0px 0px;border:2px solid black;z-index:9800;");
         document.getElementById("frejmik").style.border = "2px solid red";
         document.getElementById("frejmik").style.zIndex = "9900";
         document.getElementById("frejmik").style.backgroundColor = kolorbg;
@@ -152,10 +152,10 @@ pokaz = function (object, state) {
 
 uaktywnij = function (nr) {
     for (let u = 0; u < 5; u++) {
-        button[u].style.backgroundColor = "RGB(0,0,22)";
+        button[u].style.backgroundColor = '#000016';
         text[u].style.visibility = "hidden";
     }
-    button[nr].style.backgroundColor = "RGB(0,0,89)";
+    button[nr].style.backgroundColor = '#000059';
     text[nr].style.visibility = "visible";
 }
 
@@ -167,11 +167,11 @@ sprawdz = function () {
     }
 }
 
-input_checkbox_checked = "<input style='position:absolute;cursor:pointer;width:70%;height:70%;left:60%;top:24%;background-color:RGB(80,0,0);' type='checkbox' checked='true' onClick='sprawdz();'></input>";
-input_checkbox_unchecked = "<input style='position:absolute;cursor:pointer;width:70%;height:70%;left:60%;top:24%;background-color:RGB(80,0,0);' type='checkbox' onClick='sprawdz();'></input>";
+input_checkbox_checked = "<input style='position:absolute;cursor:pointer;width:70%;height:70%;left:60%;top:24%;background-color:#500000;' type='checkbox' checked='true' onClick='sprawdz();'></input>";
+input_checkbox_unchecked = "<input style='position:absolute;cursor:pointer;width:70%;height:70%;left:60%;top:24%;background-color:#500000;' type='checkbox' onClick='sprawdz();'></input>";
 
 utworz = function () {
-    tmp_button = document.createElement("BUTTON");
+    tmp_button = document.createElement("button");
     tmp_button.setAttribute("style", "border:0px solid black;color:red;background-color:transparent;cursor:pointer;left:98.1%;top:0.2%;width:0.3%;height:3%;position:absolute;font:italic bold 18px arial,serif;z-index:9991;visibility:hidden;");
     
     tmp_button.innerText = "X";
