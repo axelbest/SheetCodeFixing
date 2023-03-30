@@ -1,55 +1,48 @@
 <html lang="Pl">
 <head>
-    <meta name="keywords" content="js, kompilator, html, nauka, test, html, css ,pomoc dydaktyczna ,testowanie ,podgląd, pomoc, uruchom"/>
+    <meta name="keywords" content="js, kompilator, html, nauka, test, html, css, pomoc dydaktyczna, testowanie, podgląd, pomoc, uruchom" />
     <meta charset="UTF8">
     <link rel="stylesheet" href="stylesheet.css" type="text/css"/>
     <script type="application/javascript" src="scripts.js"></script>
 </head>
 <body>
 
-
 <div class="roboczy">
     <div class="do_przyciskow">
-        <button class="code_button" style="left:10%;border-top-left-radius:4px 4px;border-bottom-left-radius:4px 4px;" onClick="uaktywnij(0);current_element=0;">HTML
-        </button>
-        <button class="code_button" style="left:17%;" onClick="uaktywnij(1);current_element=1;">CSS</button>
-        <button class="code_button" style="left:24%;" onClick="uaktywnij(2);current_element=2;">Skrypt</button>
-        <button class="code_button" style="left:31%;" onClick="uaktywnij(3);current_element=3;">Konsola</button>
-        <button class="code_button" style="left:45%;" onClick="uaktywnij(4);current_element=4;">Test</button>
-        <button class="code_button" id="podglad_button" style="left:38%;" onClick="if(document.getElementById('chckbox').checked=='1'){przygotuj();wypelnij();document.getElementById('idquitx').style.visibility='visible';document.getElementById('idquitx').style.color='red';document.getElementById('idquitx').style.visibility='visible';}else{
+        <button class="code_button" style="left:10%;border-top-left-radius:4px 4px;border-bottom-left-radius:4px 4px;" onClick="uaktywnij(0)">HTML</button>
+        <button class="code_button" style="left:17%;" onClick="uaktywnij(1)">CSS</button>
+        <button class="code_button" style="left:24%;" onClick="uaktywnij(2)">Skrypt</button>
+        <button class="code_button" style="left:31%;" onClick="uaktywnij(3)">Konsola</button>
+        <button class="code_button" style="left:45%;" onClick="uaktywnij(4)">Test</button>
+        <button class="code_button" style="left:38%;"
+                id="podglad_button"
+                onClick="if(document.getElementById('chckbox').checked=='1'){przygotuj();wypelnij();document.getElementById('idquitx').style.visibility='visible';document.getElementById('idquitx').style.color='red';document.getElementById('idquitx').style.visibility='visible';}else{
 if(document.getElementById('idik').style.visibility=='hidden'){this.style.backgroundColor='grey';pokaz(document.getElementById('idik'),1);przygotuj();wypelnij();}else{pokaz(document.getElementById('idik'),0);this.style.backgroundColor='darkRed';};};">
             Podgląd
         </button>
         <button class="code_button" style="left:56%;" onClick="pokaz(document.getElementById('help_div'),1);">Pomoc</button>
         <button class="code_button" style="left:52%;border-top-right-radius:4px 4px;border-bottom-right-radius:4px 4px;" onClick="wykonaj();">Uruchom</button>
-
-
     </div>
     <iframe class="edycja" srcdoc=""></iframe>
     <iframe class="edycja"></iframe>
     <iframe class="edycja"></iframe>
     <iframe class="edycja"></iframe>
     <iframe class="edycja"></iframe>
-
 </div>
 
-
-<div id="idik" class="wynikowy" style="background-colior:gery;color:white;border:2px solid black;visibility:hidden;z-index:900;">
+<div id="idik" class="wynikowy" style="background-color:grey;color:white;border:2px solid black;visibility:hidden;z-index:900;">
     <iframe id="frejmik" style="visibility:hidden;width:99.8%;height:99.8%;"></iframe>
 </div>
 
-<button style="position:absolute;display:fixed;left:0.1%;top:0.1%;width:4.5%;height:5.5%;border-radius:8px 8px;background-color:RGB(0,0,22);color:white;cursor:pointer;"
+<button style="position:absolute;left:0.1%;top:0.1%;width:4.5%;height:5.5%;border-radius:8px 8px;background-color:RGB(0,0,22);color:white;cursor:pointer;"
         onMouseOver="this.style.backgroundColor='RGB(0,0,77)';" onMouseOut="this.style.backgroundColor='RGB(0,0,22)';"
         onClick="location.assign('http://infinityhost.ct8.pl');">Wstecz
 </button>
 
-<label style="position:absolute;display:fixed;left:85%;top:7.3%;width:9.3%;height:3.9%;">Pełny ekran</label>
-
+<label style="position:absolute;left:85%;top:7.3%;width:9.3%;height:3.9%;">Pełny ekran</label>
 <div id="chckbox"
-     style="position:absolute;display:fixed;left:91%;top:6.2%;width:2.5%;height:3.5%;border-radius:8px 8px;background-color:transparent;color:white;cursor:pointer;z-index:777;">
-
+     style="position:absolute;left:91%;top:6.2%;width:2.5%;height:3.5%;border-radius:8px 8px;background-color:transparent;color:white;cursor:pointer;z-index:777;">
 </div>
-
 
 <label class="opis" style="left:6%;">Edytor</label>
 <select style="left:10%;cursor:pointer;" onChange="if(this.selectedIndex==1){ustaw_kolory('jasny');}else{ustaw_kolory('ciemny');};">
@@ -69,13 +62,12 @@ if(document.getElementById('idik').style.visibility=='hidden'){this.style.backgr
     <option value="background-color:white;color:black;">biały
 </select>
 
-
-<div id="help_div" style="width:99.9%;height:99.6%;top:0%;left:0%;position:absolute;display:fixed;z-index:9997;border:0px solid black;">
+<div id="help_div" style="width:99.9%;height:99.6%;top:0%;left:0%;position:absolute;z-index:9997;border:0 solid black;">
 
     <video id="video_src_id"
-           style='object-fit:fill;border-radius:8px;width:99.9%;height:99.6%;top:0.1%;left:0.1;position:absolute;display:fixed;z-index:9990;border:0px solid black;' top=0
-           left=0 width=1366 height=330 controls>
-        <source width=1000 style='z-index:9996;' src='12.mp4' type='video/mp4' codecs='x264'>
+           style="object-fit:fill;border-radius:8px;width:99.9%;height:99.6%;top:0.1%;left:0;position:absolute;z-index:9990;border:0"
+           width=1366 height=330 controls>
+        <source width=1000 style='z-index:9996;' src='12.mp4' type='video/mp4' codecs='x264'/>
     </video>
 
     <button style="background-color:transparent;position:absolute;cursor:pointer;z-index:9997;color:red;visibility:hidden;top:1%;left:98%;font:italic bold 16px arial,serif;"
@@ -83,48 +75,43 @@ if(document.getElementById('idik').style.visibility=='hidden'){this.style.backgr
     </button>
 </div>
 
-
 <script>
     current_element = 0;
 
-    text = [document.querySelectorAll("IFRAME")[0], document.querySelectorAll("IFRAME")[1], document.querySelectorAll("IFRAME")[2], document.querySelectorAll("IFRAME")[3], document.querySelectorAll("IFRAME")[4]];
-    button = [document.querySelectorAll("BUTTON")[0], document.querySelectorAll("BUTTON")[1], document.querySelectorAll("BUTTON")[2], document.querySelectorAll("BUTTON")[3], document.querySelectorAll("BUTTON")[4]];
-
+    text = [
+        document.querySelectorAll("IFRAME")[0],
+        document.querySelectorAll("IFRAME")[1],
+        document.querySelectorAll("IFRAME")[2],
+        document.querySelectorAll("IFRAME")[3],
+        document.querySelectorAll("IFRAME")[4]
+    ];
+    button = [
+        document.querySelectorAll("BUTTON")[0],
+        document.querySelectorAll("BUTTON")[1],
+        document.querySelectorAll("BUTTON")[2],
+        document.querySelectorAll("BUTTON")[3],
+        document.querySelectorAll("BUTTON")[4]
+    ];
 
     init();
-
 
     text[0].contentWindow.document.body.innerHTML = "asdasdasdas";
     uaktywnij(0);
     text[0].style.overflowY = "scroll";
     text[0].style.overflowX = "scroll";
-    text[0].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;background-color:black;color:white;font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></html>");
-
-
-    text[1].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}</style></head><body contenteditable >button{color:red;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</body></html>");
-
-    text[2].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
-
-    text[3].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
-
-    text[4].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
+    text[0].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;background-color:black;color:white;font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></html>");
+    text[1].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;}</style></head><body contenteditable >button{color:red;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</body></html>");
+    text[2].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
+    text[3].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
+    text[4].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
 
     document.getElementById("podglad_button").style.backgroundColor = 'darkRed';
     document.getElementById("chckbox").checked = "0";
     document.getElementById("chckbox").innerHTML = input_checkbox_unchecked;
 
-
     setTimeout(function () {
         stop();
-    }, 2000);
-    setTimeout(function () {
-        stop();
-    }, 3000);
-    setTimeout(function () {
-        stop();
-    }, 6000);
+    }, 11000);
 </script>
-
-
 </body>
 </html>
