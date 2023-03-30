@@ -1,0 +1,301 @@
+<html lang="Pl">
+    <head>
+      <meta name="keywords" content="js, kompilator, html, nauka, test, html, css ,pomoc dydaktyczna ,testowanie ,podgląd, pomoc, uruchom" />
+        <meta charset="UTF8">
+<style>
+html{background-color:RGB(0,0,22);color:white;}
+.roboczy{background-color:RGB(0,0,33);color:white;display:relative;position:absolute;left:5%;top:5%;width:90%;height:90%;border-radius:12px 12px;border:2px solid grey;}
+.code_button{background-color:RGB(0,0,62);color:white;margin:0px 0px 0px 0px;cursor:pointer;}
+.do_przyciskow{display:flex;position:absolute;top:1.7%;left:50%;height:4%;}
+.edycja{z-index:700;border-bottom-left-radius:12px 12px;border-bottom-right-radius:12px 12px;position:absolute;top:7%;left:0.3%;width:99%;height:92%;background-color:RGB(0,0,0);color:white;border:2px solid white;visibility:hidden;}
+.wynikowy{background-color:RGB(155,155,155);color:white;display:relative;position:absolute;left:15%;top:15%;width:70%;height:70%;border-radius:0px 0px;border:2px solid black;}
+select{background-color:RGB(0,0,33);color:white;display:fixed;position:absolute;left:6%;top:6.3%;width:5%;height:4%;border-radius:8px 8px;border:1px solid grey;}
+.opis{background-color:RGB(0,0,33);color:white;display:fixed;position:absolute;left:6%;top:7%;width:5%;height:3%;border-radius:8px 8px;}
+</style>
+</head>
+<body>
+
+<script>
+
+
+pokaz=function(object,state){tab=object.querySelectorAll('*');for(let u=0;u<tab.length;u++){if(state==0){tab[u].style.visibility='hidden';object.style.visibility='hidden';}else{tab[u].style.visibility='visible';object.style.visibility='visible';};};};
+
+uaktywnij=function(nr){for(let u=0;u<5;u++){button[u].style.backgroundColor="RGB(0,0,22)";text[u].style.visibility="hidden";};button[nr].style.backgroundColor="RGB(0,0,89)";text[nr].style.visibility="visible";};
+
+sprawdz=function(){if(document.getElementById("chckbox").checked=="0"){document.getElementById("chckbox").checked="1";}else{document.getElementById("chckbox").checked="0";};};
+
+input_checkbox_checked="<input  style='display:fixed;position:absolute;cursor:pointer;width:70%;height:70%;left:60%;top:24%;background-color:RGB(80,0,0);' type='checkbox' checked='true' onClick='sprawdz();'></input>";
+input_checkbox_unchecked="<input  style='display:fixed;position:absolute;cursor:pointer;width:70%;height:70%;left:60%;top:24%;background-color:RGB(80,0,0);' type='checkbox' onClick='sprawdz();'></input>";
+
+utworz=function(){
+tmp_button=document.createElement("BUTTON");
+tmp_button.setAttribute("style","border:0px solid black;color:red;background-color:transparent;cursor:pointer;left:98.1%;top:0.2%;width:0.3%;height:3%;position:absolute;display:fixed;font:italic bold 18px arial,serif;z-index:9991;visibility:hidden;");
+
+tmp_button.innerText="X";
+tmp_button.setAttribute("id","idquitx");
+
+
+document.body.appendChild(tmp_button);
+tmp_button.setAttribute("onClick","document.getElementById('podglad_button').click();document.getElementById('idik').style.visibility='hidden';document.getElementById('idik').style.visibility='hidden';document.getElementById('idik').style.visibility='hidden';document.getElementById('idquitx').style.visibility='hidden';");
+};
+
+
+
+</script>
+
+<div class="roboczy">
+<div class="do_przyciskow">
+<button class="code_button" style="left:10%;border-top-left-radius:4px 4px;border-bottom-left-radius:4px 4px;" onClick="uaktywnij(0);current_element=0;" >HTML</button>
+<button class="code_button" style="left:17%;" onClick="uaktywnij(1);current_element=1;">CSS</button>
+<button class="code_button" style="left:24%;" onClick="uaktywnij(2);current_element=2;">Skrypt</button>
+<button class="code_button" style="left:31%;" onClick="uaktywnij(3);current_element=3;">Konsola</button>
+<button class="code_button" style="left:45%;" onClick="uaktywnij(4);current_element=4;">Test</button>
+<button class="code_button" id="podglad_button" style="left:38%;" onClick="if(document.getElementById('chckbox').checked=='1'){przygotuj();wypelnij();document.getElementById('idquitx').style.visibility='visible';document.getElementById('idquitx').style.color='red';document.getElementById('idquitx').style.visibility='visible';}else{
+if(document.getElementById('idik').style.visibility=='hidden'){this.style.backgroundColor='grey';pokaz(document.getElementById('idik'),1);przygotuj();wypelnij();}else{pokaz(document.getElementById('idik'),0);this.style.backgroundColor='darkRed';};};">Podgląd</button>
+<button class="code_button" style="left:56%;" onClick="pokaz(document.getElementById('help_div'),1);">Pomoc</button>
+<button class="code_button" style="left:52%;border-top-right-radius:4px 4px;border-bottom-right-radius:4px 4px;" onClick="wykonaj();">Uruchom</button>
+
+
+
+
+</div>
+<iframe class="edycja" srcdoc=""></iframe>
+<iframe class="edycja" ></iframe>
+<iframe class="edycja" ></iframe>
+<iframe class="edycja" ></iframe>
+<iframe class="edycja" ></iframe>
+
+</div>
+
+
+<div id="idik" class="wynikowy" style="background-colior:gery;color:white;border:2px solid black;visibility:hidden;z-index:900;">
+<iframe id="frejmik" style="visibility:hidden;width:99.8%;height:99.8%;"></iframe>
+</div>
+
+<button style="position:absolute;display:fixed;left:0.1%;top:0.1%;width:4.5%;height:5.5%;border-radius:8px 8px;background-color:RGB(0,0,22);color:white;cursor:pointer;" onMouseOver="this.style.backgroundColor='RGB(0,0,77)';" onMouseOut="this.style.backgroundColor='RGB(0,0,22)';" onClick="location.assign('http://infinityhost.ct8.pl');">Wstecz</button>
+
+<label style="position:absolute;display:fixed;left:85%;top:7.3%;width:9.3%;height:3.9%;">Pełny ekran</label>
+
+<div id="chckbox" style="position:absolute;display:fixed;left:91%;top:6.2%;width:2.5%;height:3.5%;border-radius:8px 8px;background-color:transparent;color:white;cursor:pointer;z-index:777;" >
+
+</div>
+
+
+<label class="opis" style="left:6%;">Edytor</label>
+<select style="left:10%;cursor:pointer;" onChange="if(this.selectedIndex==1){ustaw_kolory('jasny');}else{ustaw_kolory('ciemny');};"><option>czarny<option>biały</select>
+<label class="opis" style="left:16%;">Czcionka</label>
+<select style="left:21.5%;cursor:pointer;" id="czcionka_id" onChange="ustaw_czcionke();"><option>14px<option>18px<option>22px<option>26px</select>
+<label class="opis" style="left:27.5%;">Formularz</label>
+<select style="left:33.5%;cursor:pointer;" id="motyw_id" ><option value="background-color:black;color:white;">czarny<option value="background-color:white;color:black;">biały</select>
+
+
+<div id="help_div" style="width:99.9%;height:99.6%;top:0%;left:0%;position:absolute;display:fixed;z-index:9997;border:0px solid black;">
+
+<video id="video_src_id" style='object-fit:fill;border-radius:8px;width:99.9%;height:99.6%;top:0.1%;left:0.1;position:absolute;display:fixed;z-index:9990;border:0px solid black;' top=0 left=0 width=1366 height=330 controls>  <source width=1000  style='z-index:9996;' src='12.mp4' type='video/mp4' codecs='x264'></video>
+
+<button style="background-color:transparent;position:absolute;cursor:pointer;z-index:9997;color:red;visibility:hidden;top:1%;left:98%;font:italic bold 16px arial,serif;" onClick="pokaz(this.parentNode,0);">X</button>
+</div>
+
+
+<script>
+current_element=0;
+
+text=[document.querySelectorAll("IFRAME")[0],document.querySelectorAll("IFRAME")[1],document.querySelectorAll("IFRAME")[2],document.querySelectorAll("IFRAME")[3],document.querySelectorAll("IFRAME")[4]];
+button=[document.querySelectorAll("BUTTON")[0],document.querySelectorAll("BUTTON")[1],document.querySelectorAll("BUTTON")[2],document.querySelectorAll("BUTTON")[3],document.querySelectorAll("BUTTON")[4]];
+
+init=function(){
+text[0].setAttribute("srcdoc","<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}</style></head><body>Aaaaaaaa</body></html>");
+tmp=document.createElement("div");
+
+tmp.setAttribute("style","display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;background-color:black;color:white;font:italic bold 16px arial,serif;");
+tmp.setAttribute("contenteditable","true");
+tmp.innerHTML="asdasdasdas";
+
+
+text[0].contentWindow.document.body.appendChild(tmp);
+text[0].contentWindow.document.body.innerHTML=tmp.outerHTML;
+text[1].setAttribute("srcdoc","");
+text[2].setAttribute("srcdoc","");
+text[3].setAttribute("srcdoc","");
+text[4].setAttribute("srcdoc","");
+text[0].contentWindow.document.body.setAttribute("style","background-color:black;color:white;font:italic bold 16px arial,serif;");
+text[0].contentWindow.document.documentElement.setAttribute("style","background-color:black;color:white;font:italic bold 16px arial,serif;");
+text[0].contentWindow.document.body.innerHTML="asdasdasdas";
+text[0].contentWindow.document.head.innerHTML="<style>html{background-color:black;color:white;}</style>";
+document.querySelectorAll("SELECT")[2].selectedIndex=0;
+
+utworz();
+pokaz(document.getElementById("help_div"),0);
+
+
+
+};
+
+
+
+init();
+
+
+text[0].contentWindow.document.body.innerHTML="asdasdasdas";
+uaktywnij(0);
+text[0].style.overflowY="scroll";
+text[0].style.overflowX="scroll";
+text[0].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;background-color:black;color:white;font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></html>");
+
+
+text[1].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}</style></head><body contenteditable >button{color:red;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</body></html>");
+
+text[2].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
+
+text[3].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
+
+text[4].contentWindow.document.write("<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body contenteditable ></body></html>");
+
+
+przygotuj=function(){
+
+
+if(document.querySelectorAll("SELECT")[2].selectedIndex==0){
+kolorbg="black";kolortxt="white";}else{kolorbg="white";kolortxt="black";};
+
+
+if(document.getElementById("chckbox").checked=="1"){
+
+document.getElementById("idik").setAttribute("style","width:99.9%;height:99.6%;top:0%;left:0%;position:absolute;display:fixed;z-index:9800;border:0px solid black;");
+
+document.getElementById("frejmik").style.border="2px solid red";
+
+document.getElementById("frejmik").style.border="2px solid green";
+document.getElementById("frejmik").style.backgroundColor=kolorbg;
+document.getElementById("frejmik").style.color=kolortxt;
+}else{
+
+document.getElementById("idik").setAttribute("style","background-color:RGB(155,155,155);color:white;display:relative;position:absolute;left:15%;top:15%;width:70%;height:70%;border-radius:0px 0px;border:2px solid black;z-index:9800;");
+document.getElementById("frejmik").style.border="2px solid gren";
+document.getElementById("frejmik").style.zIndex="9900";
+
+document.getElementById("frejmik").style.backgroundColor=kolorbg;
+document.getElementById("frejmik").style.color=kolortxt;
+};
+
+
+
+
+
+
+
+
+};
+wypelnij=function(){
+
+
+
+
+
+
+
+if(document.querySelectorAll("SELECT")[2].selectedIndex==0){
+kolorbg="black";kolortxt="white";}else{kolorbg="white";kolortxt="black";};
+kolor=document.getElementById("motyw_id").options[document.getElementById("motyw_id").selectedIndex].value;
+
+if(document.getElementById("chckbox").checked=="0"){
+
+
+
+tmp_content=text[0].contentWindow.document.body.innerText.replace(/&gt;/g,">").replace(/</g,"<");
+
+
+tmp="<html lang='PL'><head><meta charset='UTF8'><style>html{"+kolor+"font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;"+kolor+"font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}"+text[1].contentWindow.document.body.innerText+"</style></head><body>"+tmp_content+"</body></html>";
+
+document.getElementById("idik").setAttribute("style","background-color:RGB(155,155,155);color:white;display:relative;position:absolute;left:15%;top:15%;width:70%;height:70%;border-radius:0px 0px;border:2px solid black;z-index:9800;");
+document.getElementById("frejmik").style.border="2px solid red";
+document.getElementById("frejmik").style.zIndex="9900";
+document.getElementById("frejmik").style.backgroundColor=kolorbg;
+document.getElementById("frejmik").style.color=kolortxt;
+document.getElementById("frejmik").style.border="2px solid red";
+
+document.getElementById("frejmik").contentWindow.document.write(tmp);
+document.getElementById("frejmik").contentWindow.document.close();
+}
+else{
+
+
+tmp_content=text[0].contentWindow.document.body.innerText.replace(/&gt;/g,">").replace(/</g,"<");
+
+tmp="<html lang='PL'><head><meta charset='UTF8'><style>html{"+kolor+"font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;"+kolor+"font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}"+text[1].contentWindow.document.body.innerText+"</style></head><body>"+tmp_content+"</body></html>";
+
+document.getElementById("idik").setAttribute("style","width:99.9%;height:99.6%;top:0%;left:0%;position:absolute;display:fixed;z-index:9800;border:0px solid black;");
+
+document.getElementById("frejmik").setAttribute("style","width:99.6%;height:99.3%;top:0%;left:0%;position:absolute;display:fixed;z-index:9800;border:0px solid red;");
+
+document.getElementById("frejmik").style.backgroundColor=kolorbg;
+document.getElementById("frejmik").style.color=kolortxt;
+
+document.getElementById("frejmik").style.border="2px solid grey";
+
+document.getElementById("frejmik").contentWindow.document.write(tmp);
+document.getElementById("frejmik").contentWindow.document.close();
+}
+
+
+
+
+
+
+tmp_script=document.createElement("SCRIPT");
+tmp_script.innerHTML=text[2].contentWindow.document.body.innerText+"setTimeout(function(){stop();},1000);";
+document.getElementById("frejmik").contentWindow.document.body.appendChild(tmp_script);
+
+
+
+
+
+
+if(document.querySelectorAll("SELECT")[0].selectedIndex==1){kolor="background-color:white;color:black;";}else{kolor="background-color:black;color:white;";};
+text[4].setAttribute("srcdoc","<html><head><style>html{"+kolor+"font:italic bold 16px arial,serif;display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{display:fixed;width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body>"+document.getElementById("frejmik").contentWindow.document.documentElement.outerHTML.replace(/</g,"&l"+"t;").replace(/>/g,"&g"+"t;")+"</body></html>");
+
+
+
+
+};
+
+document.getElementById("podglad_button").style.backgroundColor='darkRed';
+document.getElementById("chckbox").checked="0";
+document.getElementById("chckbox").innerHTML=input_checkbox_unchecked;
+
+ustaw_kolory=function(wybrany){if(wybrany=="jasny"){
+for(let u=0;u<5;u++){
+text[u].contentWindow.document.documentElement.style.backgroundColor='white';text[u].contentWindow.document.documentElement.style.color='black';text[u].contentWindow.document.body.style.backgroundColor='white';text[u].contentWindow.document.body.style.color='black';};}else{
+for(let u=0;u<5;u++){
+text[u].contentWindow.document.documentElement.style.backgroundColor='black';text[u].contentWindow.document.documentElement.style.color='white';text[u].contentWindow.document.body.style.backgroundColor='black';text[u].contentWindow.document.body.style.color='white';
+};};};
+
+ustaw_czcionke=function(){font_object=document.getElementById("czcionka_id");
+text[0].contentWindow.document.documentElement.style.fontSize=font_object.options[font_object.selectedIndex].text;text[0].contentWindow.document.body.style.fontSize=font_object.options[font_object.selectedIndex].text;
+text[1].contentWindow.document.documentElement.style.fontSize=font_object.options[font_object.selectedIndex].text;text[1].contentWindow.document.body.style.fontSize=font_object.options[font_object.selectedIndex].text;
+text[2].contentWindow.document.documentElement.style.fontSize=font_object.options[font_object.selectedIndex].text;text[2].contentWindow.document.body.style.fontSize=font_object.options[font_object.selectedIndex].text;
+text[3].contentWindow.document.documentElement.style.fontSize=font_object.options[font_object.selectedIndex].text;text[3].contentWindow.document.body.style.fontSize=font_object.options[font_object.selectedIndex].text;
+text[4].contentWindow.document.documentElement.style.fontSize=font_object.options[font_object.selectedIndex].text;text[4].contentWindow.document.body.style.fontSize=font_object.options[font_object.selectedIndex].text;
+
+};
+
+wykonaj=function(){
+
+script_text=text[3].contentWindow.document.body.innerText.replace(/\n/g,"");
+tmp_script=document.createElement("SCRIPT");
+tmp_script.innerText=script_text
+document.getElementById("frejmik").contentWindow.document.body.appendChild(tmp_script);
+
+
+};
+
+
+setTimeout(function(){stop();},2000);
+setTimeout(function(){stop();},3000);
+setTimeout(function(){stop();},6000);
+</script>
+
+
+
+</body>
+</html>
