@@ -7,7 +7,7 @@ przygotuj = function () {
         kolortxt = "black";
     }
     
-    if (document.getElementById("chckbox").checked == "1") {
+    if (document.getElementById("fullscreen_toggle").checked == "1") {
         document.getElementById("idik").setAttribute("style", "width:99.9%;height:99.6%;top:0%;left:0%;position:absolute;z-index:9800;border:0px solid black;");
         document.getElementById("frejmik").style.border = "2px solid red";
         document.getElementById("frejmik").style.border = "2px solid green";
@@ -32,10 +32,10 @@ wypelnij = function () {
     
     kolor = document.getElementById('layout_theme').options[document.getElementById('layout_theme').selectedIndex].value;
     
-    if (document.getElementById("chckbox").checked == "0") {
+    if (document.getElementById("fullscreen_toggle").checked == "0") {
         tmp_content = text[0].contentWindow.document.body.innerText.replace(/&gt;/g, ">").replace(/</g, "<");
         
-        tmp = "<html lang='PL'><head><meta charset='UTF8'><style>html{" + kolor + "font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;" + kolor + "font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}" + text[1].contentWindow.document.body.innerText + "</style></head><body>" + tmp_content + "</body></html>";
+        tmp = "<!DOCTYPE html><html lang='PL'><head><meta charset='UTF8'><style>html{" + kolor + "font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;" + kolor + "font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}" + text[1].contentWindow.document.body.innerText + "</style></head><body>" + tmp_content + "</body></html>";
         
         document.getElementById("idik").setAttribute("style", "background-color:#9b9b9b;color:white;display:relative;position:absolute;left:15%;top:15%;width:70%;height:70%;border-radius:0px 0px;border:2px solid black;z-index:9800;");
         document.getElementById("frejmik").style.border = "2px solid red";
@@ -49,7 +49,7 @@ wypelnij = function () {
     } else {
         tmp_content = text[0].contentWindow.document.body.innerText.replace(/&gt;/g, ">").replace(/</g, "<");
         
-        tmp = "<html lang='PL'><head><meta charset='UTF8'><style>html{" + kolor + "font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;" + kolor + "font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}" + text[1].contentWindow.document.body.innerText + "</style></head><body>" + tmp_content + "</body></html>";
+        tmp = "<!DOCTYPE html><html lang='PL'><head><meta charset='UTF8'><style>html{" + kolor + "font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;" + kolor + "font:italic bold 16px arial,serif;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}" + text[1].contentWindow.document.body.innerText + "</style></head><body>" + tmp_content + "</body></html>";
         
         document.getElementById("idik").setAttribute("style", "width:99.9%;height:99.6%;top:0%;left:0%;position:absolute;z-index:9800;border:0px solid black;");
         document.getElementById("frejmik").setAttribute("style", "width:99.6%;height:99.3%;top:0%;left:0%;position:absolute;z-index:9800;border:0px solid red;");
@@ -70,7 +70,7 @@ wypelnij = function () {
         kolor = "background-color:black;color:white;";
     }
     
-    text[4].setAttribute("srcdoc", "<html><head><style>html{" + kolor + "font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body>" + document.getElementById("frejmik").contentWindow.document.documentElement.outerHTML.replace(/</g, "&l" + "t;").replace(/>/g, "&g" + "t;") + "</body></html>");
+    text[4].setAttribute("srcdoc", "<!DOCTYPE html><html><head><style>html{" + kolor + "font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;}body::-webkit-scrollbar{display: none;}body{white-space:wrap;overflow:scroll;scrollbar-width:none;}html::-webkit-scrollbar{display: none;}html{white-space:wrap;overflow:scroll;scrollbar-width:none;}</style></head><body>" + document.getElementById("frejmik").contentWindow.document.documentElement.outerHTML.replace(/</g, "&l" + "t;").replace(/>/g, "&g" + "t;") + "</body></html>");
 }
 
 ustaw_kolory = function (wybrany) {
@@ -113,7 +113,7 @@ wykonaj = function () {
 }
 
 init = function () {
-    text[0].setAttribute("srcdoc", "<html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;}</style></head><body>Aaaaaaaa</body></html>");
+    text[0].setAttribute("srcdoc", "<!DOCTYPE html><html><head><style>html{background-color:black;color:white;font:italic bold 16px arial,serif;width:98%;height:98%;position:absolute;top:0%;left:0%;}body{width:98%;height:98%;position:absolute;top:0%;left:0%;}</style></head><body>Aaaaaaaa</body></html>");
     tmp = document.createElement("div");
     
     tmp.setAttribute("style", "width:98%;height:98%;position:absolute;top:0%;left:0%;background-color:black;color:white;font:italic bold 16px arial,serif;");
@@ -159,15 +159,12 @@ uaktywnij = function (nr) {
 }
 
 sprawdz = function () {
-    if (document.getElementById("chckbox").checked == "0") {
-        document.getElementById("chckbox").checked = "1";
+    if (document.getElementById("fullscreen_toggle").checked == "0") {
+        document.getElementById("fullscreen_toggle").checked = "1";
     } else {
-        document.getElementById("chckbox").checked = "0";
+        document.getElementById("fullscreen_toggle").checked = "0";
     }
 }
-
-input_checkbox_checked = "<input style='position:absolute;cursor:pointer;width:70%;height:70%;left:60%;top:24%;background-color:#500000;' type='checkbox' checked='true' onClick='sprawdz();'></input>";
-input_checkbox_unchecked = "<input style='position:absolute;cursor:pointer;width:70%;height:70%;left:60%;top:24%;background-color:#500000;' type='checkbox' onClick='sprawdz();'></input>";
 
 utworz = function () {
     tmp_button = document.createElement("button");
